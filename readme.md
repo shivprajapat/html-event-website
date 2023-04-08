@@ -1,4 +1,4 @@
-# Multiple Pages Website using Html Css Javascript & Bootstrap 5 | Responsive
+# Event Website Using Html Css & Javascript | Fully Responsive
 
 ## <a href=""> LIVE DEMO</a>
 
