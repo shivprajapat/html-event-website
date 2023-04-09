@@ -1,3 +1,11 @@
+window.addEventListener("load", () => {
+    // Infinity AOS
+    AOS.init({
+        duration: 1200,
+        easing: "ease-in-out-cubic",
+        once: true
+    })
+})
 // *** Header Menu
 
 function headerMenu() {
@@ -38,3 +46,6 @@ function scheduleTabs() {
     });
 }
 scheduleTabs();
+
+// Splitting
+Splitting();
