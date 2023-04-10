@@ -231,6 +231,112 @@ button {
 }
 
 /* # preloader */
+.preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+}
+
+.preloader-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+.preloader .bg-item {
+  width: 10%;
+  background-color: var(--bg-light-yellow);
+  transition: transform 1s cubic-bezier(.7, .11, .21, .91);
+  transform-origin: right;
+}
+.preloader.loaded .bg-item{
+  transform: scaleX(0);
+  transition-delay: 0.5s;
+}
+.preloader-items {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  transform: scale(0.25);
+}
+.preloader.loaded .preloader-items{
+  transition: opacity 0.5s ease;
+  opacity: 0;
+}
+.preloader-item {
+  width: 50px;
+  height: 50px;
+  background-color: var(--main-color);
+  border-radius: 50%;
+  position: absolute;
+  animation: preloader 1s linear infinite;
+}
+.preloader-item:nth-child(1) {
+  left: calc(50% - 25px);
+  top: 0;
+  --translate-x: 0;
+  --translate-y: -50px;
+  --origin-x1: center;
+  --origin-y1: 150px;
+  --origin-x2: center;
+  --origin-y1: 100px;
+}
+
+.preloader-item:nth-child(2) {
+  right: 0;
+  top: calc(50% - 25px);
+  --translate-x: 50px;
+  --translate-y: 0;
+  --origin-x1: -100px;
+  --origin-y1: center;
+  --origin-x2: -50px;
+  --origin-y1: center;
+}
+
+.preloader-item:nth-child(3) {
+  left: calc(50% - 25px);
+  bottom: 0;
+  --translate-x: 0;
+  --translate-y: 50px;
+  --origin-x1: center;
+  --origin-y1: -100px;
+  --origin-x2: center;
+  --origin-y1: -50px;
+}
+
+.preloader-item:nth-child(4) {
+  left: 0;
+  top: calc(50% - 25px);
+  --translate-x: -50px;
+  --translate-y: 0;
+  --origin-x1: 150px;
+  --origin-y1: center;
+  --origin-x2: 100px;
+  --origin-y1: center;
+}
+
+@keyframes preloader {
+  50% {
+    transform: translate(var(--translate-x), var(--translate-y));
+    transform-origin: var(--origin-x1) var(--origin-y1);
+  }
+
+  100% {
+    transform: rotate(180deg);
+    transform-origin: var(--origin-x2) var(--origin-y2);
+  }
+
+}
+
 /* # header */
 .header {
   position: fixed;

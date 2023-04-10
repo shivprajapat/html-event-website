@@ -1,10 +1,17 @@
 window.addEventListener("load", () => {
-    // Infinity AOS
-    AOS.init({
-        duration: 1200,
-        easing: "ease-in-out-cubic",
-        once: true
+    // preloader 
+    document.querySelector(".js-preloader").classList.add('loaded');
+    document.querySelector(".js-preloader .js-bg-item").addEventListener("transitionend", () => {
+        document.querySelector(".js-preloader").style.display = "none";
+
+        // Infinity AOS
+        AOS.init({
+            duration: 1200,
+            easing: "ease-in-out-cubic",
+            once: true
+        })
     })
+
 })
 // *** Header Menu
 
